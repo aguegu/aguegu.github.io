@@ -1,0 +1,26 @@
+baseURL = "https://aguegu.github.io"
+languageCode = "zh-cn"
+title = "古作坊 Agu's Mill"
+theme = "mainroad"
+disqusShortname = "agus-mill"
+googleAnalytics = "UA-110480634-1"
+
+[Author] # Used in authorbox
+    name = "aGuegu"
+    bio = "a programmer in China"
+    avatar ="//0.gravatar.com/avatar/d0aa94b6b25657acb0b659ad74f38b96"
+
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = false # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  twitter = "BG5USN"
+  instagram = "aguegu"
+  linkedin = "weihong-guan-68aa43aa"
+  github = "aguegu"
