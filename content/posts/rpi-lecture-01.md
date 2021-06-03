@@ -1,6 +1,108 @@
 ---
-title: "Rpi Lecture 01"
+title: "树莓派上手课 第1节"
 date: 2021-06-03T11:23:44+08:00
-draft: true
+draft: false
+categories: ["Raspberry Pi"]
 ---
 
+## 背景
+
+对象：小学五年级男生 1 名，学习过 Scratch，目前入门 Python 中，不怕英语
+器材：Raspberry Pi 4B (8GB内存)，Micro SD 卡，读卡器，便携屏，键盘，鼠标，WiFi 接入，树莓派4B官方塑料外壳，风扇套件，以及电源
+日期：2021年6月2日
+时长：60分钟
+
+应该学生母亲的邀请，希望我带他孩子接触下树莓派（Raspberry Pi，简称 RPi），家长对树莓派的用途不太了解。
+
+## 内容
+
+### 硬件介绍
+
+1.1. 树莓派是什么
+
+* 它是台完整的电脑主机
+* 认识接口：以太网口、USB 2.0、USB 3.0、耳机插座、Mini HDMI、USB Type-C 电源插口、Micro SD 卡槽
+
+1.2. 系统镜像烧写至SD卡（高级）
+
+* 系统镜像：[RaspiOS arm64 Desktop](https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-05-28/2021-05-07-raspios-buster-arm64.zip)
+* 烧写工具：[Raspberry Pi Imager](https://www.raspberrypi.org/software/)
+
+  注：只向学生大致介绍过程，烧录在老师电脑上进行，学生此时正在进行组装硬件。
+
+1.3. 组装：
+
+* 风扇安装（注意线序）：https://www.raspberrypi.org/products/raspberry-pi-4-case-fan/
+* 连接 键盘、鼠标、显示器
+* 插入烧好写系统的 SD 卡
+* 连接电源开机
+
+### Linux （Debian） 初体验
+
+* 系统初始化设置
+
+  这里可以测试学员的英语水平，对一个纯英文的电脑系统是否感觉恐惧。这回的小帅哥表现沉稳，基本能明白系统初始化对话框在说什么，只有个别单词需要帮助，超出我个人的预期。
+  操作系统语言选择英文，从我角度来说，这样可以避免很多后续的问题，而且可以建立一个耳濡目染的纯正英文应用环境
+
+* 系统默认用户 pi，密码 raspbian
+
+* 连接 WiFi 网络
+
+* 浏览器，其实有浏览器能上网，就已经能够作很多事了，不是么？
+
+## 终端 Terminal / 命令行界面
+
+    为什么敲命令？因为敲命令是知识传递最有效的方式
+
+* python3: 起码可以当一个超级计算器用
+
+* 给自己创建账户： `sudo adduser sg`
+
+  sudo 是什么意思？
+  终端环境下密码到底输入进去了么？
+
+* 修改账户密码： `sudo passwd sg`
+
+* 通过 raspi-config 关闭系统桌面的自动登陆。（高级，老师代劳）
+
+* 将学员账户添加到 sudo 组（高级，老师代劳，`sudo usermod -a -G sudo sg`）
+
+* 重启系统： `sudo reboot`
+
+* 用自己登陆桌面
+
+* 跑一个程序 `sl`，系统提示 `command not found`，找不到，那我们安装吧。
+
+* 切换软件源至国内清华大学镜像（高级，老师代劳），速度是不是快很多
+
+  * https://mirror.tuna.tsinghua.edu.cn/help/debian/
+  * https://mirror.tuna.tsinghua.edu.cn/help/raspbian/
+
+* Linux 如何作软件升级 ?
+
+  * `sudo apt update`: 刷新软件源列表
+  * `sudo apt upgrade`： 对已经安装的软件进行升级（系统升级）
+
+* 安装 sl `sudo apt install sl`
+
+  `[Y/n]`是在问什么？
+
+* 那执行看看吧 `sl`
+
+* sl 程序的说明书哪里看：`man sl` (顺便学个新单词 manual) 尝试读读看说明书，原来还能玩出其它花样呢
+
+  有没发现这个系统安装软件和 Windows 有很大的不同？它需要各种管家么？它会中病毒么？我需要下载个硕大对安装文件来安装程序么？
+
+* 再装一个学员熟悉的程序： `sudo apt install scratch`
+
+  为什么在这里只要几秒钟就安装完成了？
+
+* 关机： `sudo shutdown -h now`
+
+* 硬件拆解，下课
+
+## 小结
+
+其实我对小朋友的“编程”背景不太了解，之前也没给这么小的孩子上过，也没看过他学习 scratch 、python 用的教材是什么，也难度机会谈谈深浅。不过现在孩子的英文水平还是很不错的，词汇量能有我当年初二的水平吧。自己的兴趣也蛮强的。接下来还怎么学，一方面可以结合他在学的教材看看，在树莓派上搭建一个学习编程的环境。至于 Linux 本身，在树莓派上实验和找台笔记本台式机实验，从软件层面来看，没有本质的不同。只是树莓派更便宜一点，而且硬件方面未来也能扩展出其它玩法的可能性。但在我看来，这些玩法距离一个五年纪的小朋友来说，还比较遥远。而如果真要作硬件方面的实验的话，对于这个年龄段，或许用 micro:bit 会更合适一些。
+
+另外，不知道现在小朋友是怎么练习盲打的，反正我当年是用 qq 练出来的……
