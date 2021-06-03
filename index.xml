@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>古作坊 Agu's Mill</title><link>https://aguegu.github.io/</link><description>Recent content on 古作坊 Agu's Mill</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Jun 2021 11:23:44 +0800</lastBuildDate><atom:link href="https://aguegu.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>树莓派上手课 第1节</title><link>https://aguegu.github.io/posts/rpi-lecture-01/</link><pubDate>Thu, 03 Jun 2021 11:23:44 +0800</pubDate><guid>https://aguegu.github.io/posts/rpi-lecture-01/</guid><description>背景 对象：小学五年级男生 1 名，学习过 Scratch，目前入门 Python 中，不怕英语
-器材：Raspberry Pi 4B (8GB内存)，Micro SD 卡，读卡器，便携屏，键盘，鼠标，WiFi 接入，树莓派4B官方塑料外壳，风扇套件，以及电源
+器材：Raspberry Pi 4B (8GB内存)，32GB Micro SD 卡，读卡器，15.6&amp;quot; 便携屏，键盘，鼠标，WiFi 热点，树莓派4B官方塑料外壳+风扇套件，电源
 日期：2021年6月2日
 时长：60分钟
-应该学生母亲的邀请，希望我带他孩子接触下树莓派（Raspberry Pi，简称 RPi），家长对树莓派的用途不太了解。
+应该学生母亲的邀请，希望我带他孩子接触下树莓派（Raspberry Pi，简称 RPi），家长对树莓派的用途不太了解，但知道是个蛮火的编程平台。
 内容 硬件介绍 1.1. 树莓派是什么
 它是台完整的电脑主机 认识接口：以太网口、USB 2.0、USB 3.0、耳机插座、Mini HDMI、USB Type-C 电源插口、Micro SD 卡槽 1.2. 系统镜像烧写至SD卡（高级）
 系统镜像：RaspiOS arm64 Desktop
 烧写工具：Raspberry Pi Imager
 注：只向学生大致介绍过程，烧录在老师电脑上进行，学生此时正在进行组装硬件。
-1.3. 组装：
+1.3. 组装
 风扇安装（注意线序）：https://www.raspberrypi.org/products/raspberry-pi-4-case-fan/ 连接 键盘、鼠标、显示器 插入烧好写系统的 SD 卡 连接电源开机 Linux （Debian） 初体验 系统初始化设置
-这里可以测试学员的英语水平，对一个纯英文的电脑系统是否感觉恐惧。这回的小帅哥表现沉稳，基本能明白系统初始化对话框在说什么，只有个别单词需要帮助，超出我个人的预期。 操作系统语言选择英文，从我角度来说，这样可以避免很多后续的问题，对学生来说，可以建立一个耳濡目染的纯正英文应用环境
-系统默认用户 pi，密码 raspbian</description></item><item><title>Micro:bit on otto</title><link>https://aguegu.github.io/posts/otto_buildup/</link><pubDate>Thu, 29 Nov 2018 05:21:56 +0800</pubDate><guid>https://aguegu.github.io/posts/otto_buildup/</guid><description>Hello, otto otto 是个可爱的 Arduino 开源双足教育机器人项目。寒假前，福州哈雷创客空间的朋友找到我说希望整个 micro:bit(mbt) 的冬令营，本来想说之前做的RC车换个玩具车的底盘就能上了，结果被嫌弃说车子满大街，而且希望小朋友们能多学点东西，体现一点逼格。后来找来找去，发现 otto 还是比较合适。因为扯到动作的话，可以说是无底洞，够玩很久的。好吧，那就 otto 吧。
+这里可以测试学员的英语水平，对一个纯英文的电脑系统是否感觉恐惧。这回的小帅哥表现沉稳，基本能明白系统初始化对话框在说什么，只有个别单词需要帮助，超出我个人的预期。 操作系统语言选择英文，从我角度来说，这样可以避免很多后续的问题，对学生来说，可以建立一个耳濡目染的纯正英文应用环境，能不能自己装上中文输入法就看他自己本事了。</description></item><item><title>Micro:bit on otto</title><link>https://aguegu.github.io/posts/otto_buildup/</link><pubDate>Thu, 29 Nov 2018 05:21:56 +0800</pubDate><guid>https://aguegu.github.io/posts/otto_buildup/</guid><description>Hello, otto otto 是个可爱的 Arduino 开源双足教育机器人项目。寒假前，福州哈雷创客空间的朋友找到我说希望整个 micro:bit(mbt) 的冬令营，本来想说之前做的RC车换个玩具车的底盘就能上了，结果被嫌弃说车子满大街，而且希望小朋友们能多学点东西，体现一点逼格。后来找来找去，发现 otto 还是比较合适。因为扯到动作的话，可以说是无底洞，够玩很久的。好吧，那就 otto 吧。
 框架设计 接下活儿，就发现原来还是个不小的坑。因为主控还是 micro:bit，金手指部分的 IO 口其实少得可怜，除去鳄鱼夹口、按键、LED、i2c、SPI以后，只有 P8、P16 可用。还有 IDE 部分，makecode 在浏览器里拖来拖去感觉是很方便，但是也确实太占地方了……超过三层的嵌套看过去就是很大一坨了，而且传参数部分还有分行处理，平常一行的代码也会变得一大坨。写库的话，如果是这样，大家平时看不到，还是可以忍受，但是来小朋友来玩就不太合适了。
 库的部分，也是不看不知道，一看吓一跳。内容其实也是很多，那最简单的舵机转至特定角度来说，本质是保持一个特定占空比的脉冲输出。在火车扳道这类的动作中，比较直接，只要一条指令就可以了，然后 PWM 保持住就可以了。而在机器人则全然不是这么一回事。这里有了速度的概念，在 5 秒和在 0.5 秒内从 0 度到 90 度，对于机器人来说，是完全不同的两个概念，前者可以实现一个金鸡独立的动作，而后者则会因为动作太快直接倒地。这里就出现了动作帧的概念。毕竟模拟舵机的命令周期是 25ms。那么基本就是每 25ms 有一个动作帧。一个 5 秒的连续动作，拆分成 5000 / 25 = 200 帧。
 于是代码分为三层：1）最底层：保持 PWM 信号；2）中间层：拆分动作帧并发送至最底层；3）业务层：动作业务逻辑，发送到中间层。这里对于 mbt 以及 mbed 就有很多问题：
