@@ -54,7 +54,7 @@ categories: ["Raspberry Pi"]
 
     为什么敲命令？因为敲命令是知识传递最有效的方式
 
-* python3: 起码可以当一个超级计算器用
+* python3: 起码可以当一个超级计算器用，把你能想到的最复杂的四则运算输入进去吧（注意括号的配对）。
 
 * 给自己创建账户： `sudo adduser sg`
 
@@ -73,7 +73,7 @@ categories: ["Raspberry Pi"]
 
 * 跑一个程序 `sl`，系统提示 `command not found`，找不到，那我们安装吧。
 
-* 切换软件源至国内清华大学镜像（高级，老师代劳），速度是不是快很多
+* 切换软件源至国内清华大学镜像（高级，老师代劳），速度是不是快很多？
 
   * https://mirror.tuna.tsinghua.edu.cn/help/debian/
   * https://mirror.tuna.tsinghua.edu.cn/help/raspbian/
@@ -91,7 +91,10 @@ categories: ["Raspberry Pi"]
 
 * sl 程序的说明书哪里看：`man sl` (顺便学个新单词 manual) 尝试读读看说明书，原来还能玩出其它花样呢
 
-  有没发现这个系统安装软件和 Windows 有很大的不同？它需要各种管家么？它会中病毒么？我需要下载个硕大对安装文件来安装程序么？
+  有没发现这个系统安装软件和 Windows 有很大的不同？
+  它需要各种管家么？
+  它会中病毒么？
+  我需要下载个硕大的安装包来安装程序么？
 
 * 再装一个学员熟悉的程序： `sudo apt install scratch`
 
