@@ -10,7 +10,7 @@ Sourcekit&reg; Atiic is an universal i2c to serial bridge. Atiic means AT comman
 
 PC - USB - USB-TTL - Atiic - i2c sensors (SPL06 and AHT21)
 
-# Instructions
+# Core Instructions
 
 1. Flash an micro SD card with latest [64-bit Raspberry OS Lite](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2022-04-07/2022-04-04-raspios-bullseye-arm64-lite.img.xz) and get it running, Raspberry Pi 3B (RAM 1GB) should be enough in this application.
 
@@ -32,7 +32,7 @@ PC - USB - USB-TTL - Atiic - i2c sensors (SPL06 and AHT21)
 
 5. Configure grafana
 
-    1. Visit http://<raspberrypi ip>:3000 and login with admin/admin
+    1. Visit http://raspberrypi.local:3000 and login with admin/admin
     2. In menu `Server Admin / Plugins` install `sqlite`
     3. Configure a SQLite datasource, and click `Save & Test`
         * Name: Atiic
@@ -43,11 +43,12 @@ PC - USB - USB-TTL - Atiic - i2c sensors (SPL06 and AHT21)
     SELECT avg(aht21Humidity), max(ts) as _ts FROM atiic WHERE ts >= ${__from:date:seconds} AND ts < ${__to:date:seconds} group by (1000*ts/$__interval_ms)
     ```
 
-6. Tweak the dashboard to the style you prefer
+6. Tweak the dashboard to the style you prefer. You may [import new dashboard](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) with this [json](Atiic-1651162898701.json) file to get this:
 
   ![screenshot](screenshot.png)
 
-  There are 6 fields in the `atiic` table:
+
+# Data Fields
 
   * ts: INTEGER PRIMARY KEY, unix timestamp in seconds
   * spl06Temperature: REAL, Temperature reading from SPL06, unit Celsius (&deg;C)
