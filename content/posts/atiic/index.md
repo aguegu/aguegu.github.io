@@ -6,6 +6,8 @@ draft: false
 
 Sourcekit&reg; Atiic is an universal i2c to serial bridge. Atiic means AT commands to operate i2c devices. Check [i2c.ninja](https://i2c.ninja/#/about) to see how its AT command sets work.
 
+![Atiic and Raspberry Pi 3B](atiic_rpi3b.jpg)
+
 PC - USB - USB-TTL - Atiic - i2c sensors (SPL06 and AHT21)
 
 # Instructions
