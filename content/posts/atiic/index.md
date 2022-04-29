@@ -24,11 +24,11 @@ PC - USB - USB-TTL - Atiic - i2c sensors (SPL06 and AHT21)
 
     1. sudo mkdir -p /var/lib/grafana /var/lib/atiic
     2. sudo chown 472 /var/lib/grafana  
-    3. docker run -d -p 3000:3000 -v /var/lib/grafana:/var/lib/grafana -v /var/lib/atiic:/var/lib/atiic:ro --name=grafana --restart=unless-stopped grafana/grafana-oss:8.5.0
+    3. `docker run -d -p 3000:3000 -v /var/lib/grafana:/var/lib/grafana -v /var/lib/atiic:/var/lib/atiic:ro --name=grafana --restart=unless-stopped grafana/grafana-oss:8.5.0`
 
 4. Install aguegu/Atiic
 
-  docker run -d --name=atiic --restart=unless-stopped --privileged=true -v /var/lib/atiic:/var/lib/atiic -v /dev:/dev -v /run/udev:/run/udev:ro aguegu/atiic:develop-arm64v8
+  `docker run -d --name=atiic --restart=unless-stopped --privileged=true -v /var/lib/atiic:/var/lib/atiic -v /dev:/dev -v /run/udev:/run/udev:ro aguegu/atiic:develop-arm64v8`
 
 5. Configure grafana
 
